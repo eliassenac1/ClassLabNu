@@ -45,6 +45,20 @@ namespace ComercialSys91
 
         private void btnlLisar_Click(object sender, EventArgs e)
         {
+            dgvUsuarios.Rows.Clear();
+            List<Usuario> listadeusuarios = Usuario.Listar();
+            int cont = 0;
+            foreach (Usuario usuario in listadeusuarios)
+            {
+                dgvUsuarios.Rows.Add();
+                dgvUsuarios.Rows[cont].Cells[0].Value = usuario.Id.ToString();
+                dgvUsuarios.Rows[cont].Cells[1].Value = usuario.Nome.ToString();
+                dgvUsuarios.Rows[cont].Cells[2].Value = usuario.Email.ToString();
+                dgvUsuarios.Rows[cont].Cells[3].Value = usuario.Senha.ToString();
+                dgvUsuarios.Rows[cont].Cells[0].Value = usuario.Ativo;
+
+                cont++;
+            }
 
         }
 

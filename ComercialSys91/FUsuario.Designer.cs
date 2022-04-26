@@ -45,6 +45,7 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.btnAlterar = new System.Windows.Forms.Button();
+            this.Ativocl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,11 +58,12 @@
             this.clnId,
             this.clnNome,
             this.clnSenha,
-            this.clnEmail});
+            this.clnEmail,
+            this.Ativocl});
             this.dgvUsuarios.Location = new System.Drawing.Point(15, 167);
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.ReadOnly = true;
-            this.dgvUsuarios.Size = new System.Drawing.Size(475, 128);
+            this.dgvUsuarios.Size = new System.Drawing.Size(522, 128);
             this.dgvUsuarios.TabIndex = 22;
             this.dgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellContentClick);
             // 
@@ -176,7 +178,7 @@
             this.txtEmail.Location = new System.Drawing.Point(227, 55);
             this.txtEmail.MaxLength = 60;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(238, 20);
+            this.txtEmail.Size = new System.Drawing.Size(310, 20);
             this.txtEmail.TabIndex = 13;
             this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
@@ -185,7 +187,7 @@
             this.txtNome.Location = new System.Drawing.Point(168, 12);
             this.txtNome.MaxLength = 60;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(297, 20);
+            this.txtNome.Size = new System.Drawing.Size(369, 20);
             this.txtNome.TabIndex = 12;
             this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
@@ -199,11 +201,17 @@
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
+            // Ativocl
+            // 
+            this.Ativocl.HeaderText = "Ativo";
+            this.Ativocl.Name = "Ativocl";
+            this.Ativocl.ReadOnly = true;
+            // 
             // FUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 329);
+            this.ClientSize = new System.Drawing.Size(549, 329);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.dgvUsuarios);
             this.Controls.Add(this.btnInserir);
@@ -245,5 +253,6 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ativocl;
     }
 }

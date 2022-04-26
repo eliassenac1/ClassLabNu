@@ -55,7 +55,7 @@ namespace ComercialSys91
                 dgvUsuarios.Rows[cont].Cells[1].Value = usuario.Nome.ToString();
                 dgvUsuarios.Rows[cont].Cells[2].Value = usuario.Email.ToString();
                 dgvUsuarios.Rows[cont].Cells[3].Value = usuario.Senha.ToString();
-                dgvUsuarios.Rows[cont].Cells[0].Value = usuario.Ativo;
+                dgvUsuarios.Rows[cont].Cells[4].Value = usuario.Ativo;
 
                 cont++;
             }

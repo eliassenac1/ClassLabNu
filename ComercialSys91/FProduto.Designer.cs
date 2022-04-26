@@ -215,6 +215,7 @@
             this.dgv_produtos.Name = "dgv_produtos";
             this.dgv_produtos.Size = new System.Drawing.Size(442, 191);
             this.dgv_produtos.TabIndex = 18;
+            this.dgv_produtos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_produtos_CellContentClick);
             // 
             // IDcl
             // 

@@ -33,5 +33,22 @@ namespace ComercialSys91
             frmPedidos.MdiParent = this;
             frmPedidos.Show();
         }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void novoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FUsuario fUsuario = new FUsuario();
+            fUsuario.MdiParent = this;
+            fUsuario.Show();
+        }
     }
 }

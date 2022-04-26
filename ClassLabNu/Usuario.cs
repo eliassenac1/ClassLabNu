@@ -13,12 +13,12 @@ namespace ClassLabNu
     {
         // atributos (campos)
 
-        private int Id { set; get; }
-        private string Nome { set; get; }
-        private string Email { set; get; }
-        private Nivel Nivel { set; get; }
-        private string Senha { set; get; }
-        private bool Ativo { set; get; }
+        public int Id { set; get; }
+        public string Nome { set; get; }
+        public string Email { set; get; }
+        public Nivel Nivel { set; get; }
+        public string Senha { set; get; }
+        public bool Ativo { set; get; }
 
 
         // métodos Construtores

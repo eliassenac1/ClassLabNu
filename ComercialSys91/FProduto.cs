@@ -44,5 +44,10 @@ namespace ComercialSys91
         {
            
         }
+
+        private void dgv_produtos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

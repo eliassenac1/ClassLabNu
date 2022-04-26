@@ -13,21 +13,29 @@ namespace ComercialSys91
 {
     public partial class FUsuario : Form
     {
-        public FUsuario(Form parent)
+        public FUsuario()
         {
             InitializeComponent();
-            MdiParent = parent;
+            //MdiParent = parent;
         }
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            Usuario usuario = new Usuario(
-               Convert.ToInt32(txtId.Text),
-                 txtNome.Text,
-                 txtEmail.Text,
-                 txtSenha.Text
-                 );
+            Usuario usuario = new Usuario (txtNome.Text, txtEmail.Text, txtSenha.Text);
+
             usuario.Inserir();
+
+            if (usuario.Id > 0)
+            {
+                
+                MessageBox.Show("Cliente gravado com sucesso!");
+            }
+            else
+            {
+                MessageBox.Show("Falha ao inserir cliente.");
+            }
+
+
         }
 
         private void txtNome_TextChanged(object sender, EventArgs e)

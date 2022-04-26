@@ -21,12 +21,11 @@ namespace ComercialSys91
         private void Form1_Load(object sender, EventArgs e)
         {
             string usuario = System.Environment.UserName;
-            Text += " - " + usuario ;    
-            DataTable dt = new DataTable();
-            dt.Load(Nivel.Listar());
-            cmbNivel.DataSource = dt;
+            Text += " - " + usuario ;
+
+            cmbNivel.DataSource = Nivel.Listar().ToArray();
             cmbNivel.DisplayMember = "nome";
-            cmbNivel.ValueMember = "idnv";
+            cmbNivel.ValueMember = "Id";
 
 
         }

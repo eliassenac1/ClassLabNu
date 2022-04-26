@@ -166,6 +166,7 @@
             this.txtSenha.Location = new System.Drawing.Point(71, 55);
             this.txtSenha.MaxLength = 32;
             this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(87, 20);
             this.txtSenha.TabIndex = 14;
             this.txtSenha.TextChanged += new System.EventHandler(this.txtSenha_TextChanged);
@@ -217,6 +218,7 @@
             this.Controls.Add(this.txtNome);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuário";
             this.Load += new System.EventHandler(this.FUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();

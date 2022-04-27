@@ -35,7 +35,7 @@ namespace ComercialSys91
             {
                 
                 
-
+                this.Close();
                 
             }
             else

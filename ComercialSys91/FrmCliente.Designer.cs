@@ -424,6 +424,7 @@
             this.maskedTextBox1.Size = new System.Drawing.Size(64, 20);
             this.maskedTextBox1.TabIndex = 10;
             this.maskedTextBox1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
+            this.maskedTextBox1.Leave += new System.EventHandler(this.maskedTextBox1_Leave);
             // 
             // cb_tipo
             // 

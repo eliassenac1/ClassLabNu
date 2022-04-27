@@ -74,6 +74,13 @@ namespace ClassLabNu
         }
         public static bool EfetuarLogin(string email, string senha) 
         {
+            Usuario usuario = new Usuario();
+
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from usuarios where email = '" + usuario + "' and senha = '" + senha + "'";
+            var dr = cmd.ExecuteReader();
+
             // realiza validação e devolve verdadeiro ou falso
             return false;
         }

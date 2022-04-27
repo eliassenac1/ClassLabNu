@@ -69,15 +69,18 @@ namespace ComercialSys91
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            Usuario usuario = new Usuario();            
-            if (usuario.alterar(int.Parse(txtId.Text), txtNome.Text, txtSenha.Text, txtEmail.Text))
+            try
             {
+                Usuario usuario = new Usuario();
+                usuario.alterar(int.Parse(txtId.Text), txtNome.Text, txtEmail.Text, txtSenha.Text);
                 MessageBox.Show("Usuario Alterado com sucesso!");
             }
-            else
+            catch (Exception ex)
             {
                 MessageBox.Show("Falha na alteração do Usuario!");
             }
+            
+            
         }
 
         private void txtId_TextChanged(object sender, EventArgs e)

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassLabNu;
 
+
 namespace ComercialSys91
 {
     public partial class FrmCliente : Form
@@ -148,6 +149,25 @@ namespace ComercialSys91
         }
 
         private void chkAtivo_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            WebCep webCep = new WebCep(maskedTextBox1.Text);
+            textBox2.Text = webCep.TipoLagradouro + webCep.Lagradouro;
+            tb_bairro.Text = webCep.Bairro;
+            tb_cidade.Text = webCep.Cidade;
+            tb_Complemento.Text = tb_Complemento.Text;
+            tb_numero.Text = tb_numero.Text;
+            tb_UF.Text = webCep.UF;
+            
+
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }

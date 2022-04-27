@@ -169,14 +169,25 @@ namespace ComercialSys91
 
         private void maskedTextBox1_Leave(object sender, EventArgs e)
         {
-            WebCep webCep = new WebCep(maskedTextBox1.Text);
-            textBox2.Text = webCep.TipoLagradouro + webCep.Lagradouro;
-            tb_bairro.Text = webCep.Bairro;
-            tb_cidade.Text = webCep.Cidade;
-            tb_Complemento.Text = tb_Complemento.Text;
-            tb_numero.Text = tb_numero.Text;
-            tb_UF.Text = webCep.UF;
+            try
+            {
+                WebCep webCep = new WebCep(maskedTextBox1.Text);
+                textBox2.Text =  webCep.Lagradouro;
+                tb_bairro.Text = webCep.Bairro;
+                tb_cidade.Text = webCep.Localidade;
+                tb_Complemento.Text = tb_Complemento.Text;
+                tb_numero.Text = tb_numero.Text;
+                tb_UF.Text = webCep.UF;
+                
 
+
+            }
+            catch (Exception ex )
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

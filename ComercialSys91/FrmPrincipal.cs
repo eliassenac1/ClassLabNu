@@ -15,8 +15,7 @@ namespace ComercialSys91
         public FrmPrincipal()
         {
             InitializeComponent();
-            FLogin fLogin = new FLogin(this);
-            fLogin.ShowDialog();
+            
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -38,7 +37,8 @@ namespace ComercialSys91
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-
+            FLogin fLogin = new FLogin();
+            fLogin.ShowDialog();
         }
 
         private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)

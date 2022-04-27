@@ -35,6 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.tb_senha = new System.Windows.Forms.TextBox();
+            this.lb_errologin = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_Logar
@@ -54,9 +55,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Usuário";
+            this.label1.Text = "Email";
             // 
             // tb_usuario
             // 
@@ -77,6 +78,7 @@
             // 
             // btn_cancelar
             // 
+            this.btn_cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cancelar.Location = new System.Drawing.Point(113, 115);
             this.btn_cancelar.Name = "btn_cancelar";
@@ -94,11 +96,24 @@
             this.tb_senha.Size = new System.Drawing.Size(172, 20);
             this.tb_senha.TabIndex = 5;
             // 
+            // lb_errologin
+            // 
+            this.lb_errologin.AutoSize = true;
+            this.lb_errologin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_errologin.ForeColor = System.Drawing.Color.Red;
+            this.lb_errologin.Location = new System.Drawing.Point(12, 153);
+            this.lb_errologin.Name = "lb_errologin";
+            this.lb_errologin.Size = new System.Drawing.Size(0, 13);
+            this.lb_errologin.TabIndex = 6;
+            // 
             // FLogin
             // 
+            this.AcceptButton = this.btn_Logar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(203, 162);
+            this.CancelButton = this.btn_cancelar;
+            this.ClientSize = new System.Drawing.Size(203, 175);
+            this.Controls.Add(this.lb_errologin);
             this.Controls.Add(this.tb_senha);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.label2);
@@ -112,6 +127,7 @@
             this.Name = "FLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.FLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,5 +141,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.TextBox tb_senha;
+        private System.Windows.Forms.Label lb_errologin;
     }
 }

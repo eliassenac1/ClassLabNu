@@ -78,11 +78,12 @@ namespace ClassLabNu
 
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from usuarios where email = '" + usuario + "' and senha = '" + senha + "'";
-            var dr = cmd.ExecuteReader();
+            cmd.CommandText = "select * from usuarios where email = '" + email + "' and senha = md5('"+ senha +"')";
+            var dr = cmd.ExecuteReader();            
 
             // realiza validação e devolve verdadeiro ou falso
-            return false;
+
+            return dr.Read();
         }
         public bool alterar(int _id, string _nome, string _senha, string _email)
         {

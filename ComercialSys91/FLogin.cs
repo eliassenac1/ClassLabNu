@@ -15,33 +15,36 @@ namespace ComercialSys91
 {
     public partial class FLogin : Form
     {
-        FrmPrincipal frmPrincipal;      
+              
 
 
 
-        public FLogin(FrmPrincipal f)
+        public FLogin()
         {
             InitializeComponent();
-            frmPrincipal = f;
+            
         }
 
         private void btn_Logar_Click(object sender, EventArgs e)
         {
           
             
-            string usuario = tb_usuario.Text;
-            string senha = tb_senha.Text;  
+            
 
-            if(usuario == "" || senha =="")
+            if (Usuario.EfetuarLogin (tb_usuario.Text, tb_senha.Text))
             {
-                MessageBox.Show("Usuário ou senha Inválidos");
-                tb_usuario.Focus();
-                return;
+                
+                
+
+                
             }
             else
             {
-                MessageBox.Show("Login efetuado com sucesso");
-                this.Close();
+                lb_errologin.Text = "Usuário ou Senha Inválidos";
+                tb_usuario.Clear();
+                tb_senha.Clear();
+                tb_usuario.Focus();
+                
             }
                     
             
@@ -54,6 +57,11 @@ namespace ComercialSys91
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
             // this.Close();
+        }
+
+        private void FLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

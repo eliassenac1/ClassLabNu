@@ -93,6 +93,7 @@
             this.produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
             this.produtosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.produtosToolStripMenuItem.Text = "&Produtos";
+            this.produtosToolStripMenuItem.Click += new System.EventHandler(this.produtosToolStripMenuItem_Click);
             // 
             // usuáriosToolStripMenuItem
             // 
@@ -108,14 +109,14 @@
             // novoToolStripMenuItem1
             // 
             this.novoToolStripMenuItem1.Name = "novoToolStripMenuItem1";
-            this.novoToolStripMenuItem1.Size = new System.Drawing.Size(106, 22);
+            this.novoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.novoToolStripMenuItem1.Text = "&Novo";
             this.novoToolStripMenuItem1.Click += new System.EventHandler(this.novoToolStripMenuItem1_Click);
             // 
             // niveisToolStripMenuItem
             // 
             this.niveisToolStripMenuItem.Name = "niveisToolStripMenuItem";
-            this.niveisToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+            this.niveisToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.niveisToolStripMenuItem.Text = "Ní&veis";
             // 
             // movimentoToolStripMenuItem

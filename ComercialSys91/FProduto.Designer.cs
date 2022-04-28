@@ -129,7 +129,6 @@
             this.tb_codbar.Location = new System.Drawing.Point(161, 18);
             this.tb_codbar.MaxLength = 13;
             this.tb_codbar.Name = "tb_codbar";
-            this.tb_codbar.ReadOnly = true;
             this.tb_codbar.Size = new System.Drawing.Size(238, 20);
             this.tb_codbar.TabIndex = 9;
             // 
@@ -262,6 +261,7 @@
             this.Controls.Add(this.label2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FProduto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Produtos";
             this.Load += new System.EventHandler(this.FrmProduto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_produtos)).EndInit();

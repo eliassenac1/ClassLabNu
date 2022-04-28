@@ -37,8 +37,10 @@ namespace ComercialSys91
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-            FLogin fLogin = new FLogin(this);
+           
+            FLogin fLogin = new FLogin();
             fLogin.ShowDialog();
+            lb_nome.Text = Program.usuario.Nome;
         }
 
         private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -56,6 +58,12 @@ namespace ComercialSys91
         private void btn_sair_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FProduto fproduto = new FProduto();
+            fproduto.ShowDialog();
         }
     }
 }

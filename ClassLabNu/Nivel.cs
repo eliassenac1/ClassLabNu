@@ -22,8 +22,9 @@ namespace ClassLabNu
 
 
         // métodos construtores
-        public Nivel()
+        public Nivel(int _id = 0)
         {
+            id = _id;
         }
         public Nivel(string nome, string sigla)
         {
@@ -31,12 +32,12 @@ namespace ClassLabNu
             this.sigla = sigla;
             ativo = true;
         }
-        public Nivel(int id, string nome, string sigla, bool ativo)
+        public Nivel(int id, string nome, string sigla)
         {
             this.id = id;
             this.nome = nome;
             this.sigla = sigla;
-            this.ativo = ativo;
+            
         }
         // Métodos da classe
         public void InserirNovo()
@@ -63,7 +64,7 @@ namespace ClassLabNu
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                nivel = new Nivel(dr.GetInt32(0), dr.GetString(1), dr.GetString(2), dr.GetBoolean(3));
+                nivel = new Nivel(dr.GetInt32(0), dr.GetString(1), dr.GetString(2));
             }
             return nivel;
         }
@@ -77,7 +78,7 @@ namespace ClassLabNu
 
                 while (dr.Read())
             {
-                niveis.Add(new Nivel(dr.GetInt32(0), dr.GetString(1), dr.GetString(2), true));
+                niveis.Add(new Nivel(dr.GetInt32(0), dr.GetString(1), dr.GetString(2)));
             }
             return niveis;
         }

@@ -52,13 +52,15 @@ namespace ClassLabNu
             this.Senha = senha;
         }
 
-        public Usuario(int iD, string nome, string senha, string email, bool ativo)
+        public Usuario(int iD, string nome, string senha, string email, Nivel nivel, bool ativo)
         {
             Id = iD;
             Nome = nome;
             Senha = senha;
             Email = email;
             Ativo = ativo;
+            Nivel = nivel;
+
         }
         // métodos da classe
         public void Inserir()
@@ -72,7 +74,7 @@ namespace ClassLabNu
             Id = Convert.ToInt32(cmd.ExecuteScalar());
             cmd.Connection.Close();
         }
-        public static bool EfetuarLogin( string email, string senha) 
+        public static Usuario EfetuarLogin( string email, string senha) 
         {
             
             Usuario usuario = new Usuario();                
@@ -81,11 +83,19 @@ namespace ClassLabNu
             cmd.CommandText = "select * from usuarios where email = '" + email + "' and senha = md5('"+ senha +"')";
             
             var dr = cmd.ExecuteReader();
-
+            while (dr.Read())
+            {
+                usuario.Id = dr.GetInt32(0);
+                usuario.Nome = dr.GetString(1);
+                usuario.Email = dr.GetString(2);
+                usuario.Senha = dr.GetString(3);
+                usuario.Ativo = dr.GetBoolean(5);
+                usuario.Nivel= Nivel.ConsultarPorId(dr.GetInt32(4));
+            }
 
             
 
-            return dr.Read();
+            return usuario;
 
 
 
@@ -135,7 +145,8 @@ namespace ClassLabNu
                    dr.GetString(1),
                    dr.GetString(2),
                    dr.GetString(3),
-                   dr.GetBoolean(5)
+                   Nivel.ConsultarPorId(dr.GetInt32(4)),
+                dr.GetBoolean(5)
                     ));
             }
             return usuarios;

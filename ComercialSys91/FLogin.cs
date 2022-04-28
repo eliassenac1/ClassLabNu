@@ -16,14 +16,14 @@ namespace ComercialSys91
     public partial class FLogin : Form
     {
 
-        FrmPrincipal frmPrincipal;
+        //FrmPrincipal frmPrincipal;
         
 
-        public FLogin(FrmPrincipal fp)
+        public FLogin()
         {
             InitializeComponent();
             
-            frmPrincipal = fp;
+            //frmPrincipal = fp;
 
 
         }
@@ -31,34 +31,19 @@ namespace ComercialSys91
         private void btn_Logar_Click(object sender, EventArgs e)
         {
 
-            Usuario usuario = new Usuario();
-
-            
-
-
-            if (Usuario.EfetuarLogin(tb_usuario.Text, tb_senha.Text))
+            Program.usuario = Usuario.EfetuarLogin(tb_usuario.Text, tb_senha.Text);
+            if (Program.usuario.Id > 0)
             {
-
-
-                frmPrincipal.lb_nome.Text = tb_usuario.Text;
-                
-
                 this.Close();
-                
-
-                
-                
-                
-                
             }
             else
             {
                 lb_errologin.Text = "Usuário ou Senha Inválidos";
                 tb_usuario.Clear();
                 tb_senha.Clear();
-                tb_usuario.Focus();
-                
+
             }
+
                     
             
             
@@ -69,7 +54,7 @@ namespace ComercialSys91
 
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
-            // this.Close();
+            Application.Exit();
         }
 
         private void FLogin_Load(object sender, EventArgs e)

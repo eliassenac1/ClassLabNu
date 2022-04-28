@@ -178,6 +178,7 @@ namespace ComercialSys91
                 tb_Complemento.Text = tb_Complemento.Text;
                 tb_numero.Text = tb_numero.Text;
                 tb_UF.Text = webCep.UF;
+                cb_estado.Text = webCep.UF;
                 
 
 

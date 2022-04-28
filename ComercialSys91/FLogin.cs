@@ -15,27 +15,40 @@ namespace ComercialSys91
 {
     public partial class FLogin : Form
     {
-              
 
+        FrmPrincipal frmPrincipal;
+        
 
-
-        public FLogin()
+        public FLogin(FrmPrincipal fp)
         {
             InitializeComponent();
             
+            frmPrincipal = fp;
+
+
         }
 
         private void btn_Logar_Click(object sender, EventArgs e)
         {
-          
-            
+
+            Usuario usuario = new Usuario();
+
             
 
-            if (Usuario.EfetuarLogin (tb_usuario.Text, tb_senha.Text))
+
+            if (Usuario.EfetuarLogin(tb_usuario.Text, tb_senha.Text))
             {
+
+
+                frmPrincipal.lb_nome.Text = tb_usuario.Text;
                 
-                
+
                 this.Close();
+                
+
+                
+                
+                
                 
             }
             else

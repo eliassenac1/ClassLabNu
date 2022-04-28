@@ -61,13 +61,13 @@ namespace ClassLabNu
                 {
                     if (ds.Tables[0].Rows.Count > 0)
                     {
-                    _uf = ds.Tables[0].Rows[0]["uf"].ToString().Trim();
-                    _localidade = ds.Tables[0].Rows[0]["localidade"].ToString().Trim();
-                    _bairro = ds.Tables[0].Rows[0]["bairro"].ToString().Trim();                    
-                    _lagradouro = ds.Tables[0].Rows[0]["logradouro"].ToString().Trim();
+                        _uf = ds.Tables[0].Rows[0]["uf"].ToString().Trim();
+                        _localidade = ds.Tables[0].Rows[0]["localidade"].ToString().Trim();
+                        _bairro = ds.Tables[0].Rows[0]["bairro"].ToString().Trim();                    
+                        _lagradouro = ds.Tables[0].Rows[0]["logradouro"].ToString().Trim();
                     
                 }
-                }
+                    }
                 //Exemplo do retorno da  WEB  
                 //<?xml version="1.0"  encoding="iso-8859-1"?>  
                 //<webservicecep>  

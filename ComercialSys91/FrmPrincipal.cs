@@ -37,7 +37,7 @@ namespace ComercialSys91
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-            FLogin fLogin = new FLogin();
+            FLogin fLogin = new FLogin(this);
             fLogin.ShowDialog();
         }
 
@@ -51,6 +51,11 @@ namespace ComercialSys91
             FUsuario fUsuario = new FUsuario();
             fUsuario.MdiParent = this;
             fUsuario.Show();
+        }
+
+        private void btn_sair_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

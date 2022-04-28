@@ -49,6 +49,9 @@
             this.trocarSessãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alterarUsuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lb_usuario = new System.Windows.Forms.Label();
+            this.lb_nome = new System.Windows.Forms.Label();
+            this.btn_sair = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +64,7 @@
             this.movimentoToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1246, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -80,7 +83,7 @@
             // 
             this.clientesToolStripMenuItem.Image = global::ComercialSys91.Properties.Resources.Users;
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clientesToolStripMenuItem.Text = "C&lientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
@@ -105,7 +108,7 @@
             // novoToolStripMenuItem1
             // 
             this.novoToolStripMenuItem1.Name = "novoToolStripMenuItem1";
-            this.novoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.novoToolStripMenuItem1.Size = new System.Drawing.Size(106, 22);
             this.novoToolStripMenuItem1.Text = "&Novo";
             this.novoToolStripMenuItem1.Click += new System.EventHandler(this.novoToolStripMenuItem1_Click);
             // 
@@ -181,9 +184,9 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSplitButton1,
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 428);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 384);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(800, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1246, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -217,13 +220,50 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(122, 17);
             this.toolStripStatusLabel1.Text = "José Saudades - Caixa";
             // 
+            // lb_usuario
+            // 
+            this.lb_usuario.AutoSize = true;
+            this.lb_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_usuario.Location = new System.Drawing.Point(1046, 7);
+            this.lb_usuario.Name = "lb_usuario";
+            this.lb_usuario.Size = new System.Drawing.Size(54, 13);
+            this.lb_usuario.TabIndex = 5;
+            this.lb_usuario.Text = "Usuário:";
+            // 
+            // lb_nome
+            // 
+            this.lb_nome.AutoSize = true;
+            this.lb_nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_nome.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lb_nome.Location = new System.Drawing.Point(1097, 5);
+            this.lb_nome.Name = "lb_nome";
+            this.lb_nome.Size = new System.Drawing.Size(0, 16);
+            this.lb_nome.TabIndex = 6;
+            // 
+            // btn_sair
+            // 
+            this.btn_sair.FlatAppearance.BorderSize = 0;
+            this.btn_sair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_sair.Image = ((System.Drawing.Image)(resources.GetObject("btn_sair.Image")));
+            this.btn_sair.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_sair.Location = new System.Drawing.Point(1018, 0);
+            this.btn_sair.Name = "btn_sair";
+            this.btn_sair.Size = new System.Drawing.Size(32, 24);
+            this.btn_sair.TabIndex = 7;
+            this.btn_sair.UseVisualStyleBackColor = true;
+            this.btn_sair.Click += new System.EventHandler(this.btn_sair_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1246, 406);
+            this.Controls.Add(this.btn_sair);
+            this.Controls.Add(this.lb_nome);
+            this.Controls.Add(this.lb_usuario);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -262,5 +302,8 @@
         private System.Windows.Forms.ToolStripMenuItem trocarSessãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alterarUsuárioToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.Label lb_usuario;
+        public System.Windows.Forms.Label lb_nome;
+        private System.Windows.Forms.Button btn_sair;
     }
 }

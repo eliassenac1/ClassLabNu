@@ -50,7 +50,10 @@
             this.IDcl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descriçaocl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Unidadecl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codbarcl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valorcl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descontocl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Statuscl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_produtos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -208,11 +211,14 @@
             this.IDcl,
             this.Descriçaocl,
             this.Unidadecl,
-            this.Valorcl});
+            this.Codbarcl,
+            this.Valorcl,
+            this.Descontocl,
+            this.Statuscl});
             this.dgv_produtos.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgv_produtos.Location = new System.Drawing.Point(0, 288);
             this.dgv_produtos.Name = "dgv_produtos";
-            this.dgv_produtos.Size = new System.Drawing.Size(442, 191);
+            this.dgv_produtos.Size = new System.Drawing.Size(568, 191);
             this.dgv_produtos.TabIndex = 18;
             this.dgv_produtos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_produtos_CellContentClick);
             // 
@@ -231,16 +237,32 @@
             this.Unidadecl.HeaderText = "Unidade";
             this.Unidadecl.Name = "Unidadecl";
             // 
+            // Codbarcl
+            // 
+            this.Codbarcl.HeaderText = "CodBar";
+            this.Codbarcl.Name = "Codbarcl";
+            // 
             // Valorcl
             // 
             this.Valorcl.HeaderText = "Valor";
             this.Valorcl.Name = "Valorcl";
             // 
+            // Descontocl
+            // 
+            this.Descontocl.HeaderText = "Desconto";
+            this.Descontocl.Name = "Descontocl";
+            // 
+            // Statuscl
+            // 
+            this.Statuscl.HeaderText = "statuscl";
+            this.Statuscl.Name = "Statuscl";
+            // 
             // FProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 479);
+            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.ClientSize = new System.Drawing.Size(568, 479);
             this.Controls.Add(this.dgv_produtos);
             this.Controls.Add(this.btn_listar);
             this.Controls.Add(this.btn_consultar);
@@ -292,6 +314,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IDcl;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descriçaocl;
         private System.Windows.Forms.DataGridViewTextBoxColumn Unidadecl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codbarcl;
         private System.Windows.Forms.DataGridViewTextBoxColumn Valorcl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descontocl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Statuscl;
     }
 }

@@ -80,7 +80,7 @@ namespace ClassLabNu
             Usuario usuario = new Usuario();                
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from usuarios where email = '" + email + "' and senha = md5('"+ senha +"')";
+            cmd.CommandText = "select * from usuarios where email = '" + email + "' ,and senha = md5('"+ senha +"')";
             
             var dr = cmd.ExecuteReader();
             while (dr.Read())

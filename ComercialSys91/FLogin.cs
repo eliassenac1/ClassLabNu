@@ -61,5 +61,10 @@ namespace ComercialSys91
         {
 
         }
+
+        private void tb_usuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

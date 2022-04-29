@@ -34,6 +34,7 @@
             this.clnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnSenha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clnEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ativocl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnInserir = new System.Windows.Forms.Button();
             this.btnlLisar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.btnAlterar = new System.Windows.Forms.Button();
-            this.Ativocl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,6 +97,12 @@
             this.clnEmail.Name = "clnEmail";
             this.clnEmail.ReadOnly = true;
             this.clnEmail.Width = 130;
+            // 
+            // Ativocl
+            // 
+            this.Ativocl.HeaderText = "Ativo";
+            this.Ativocl.Name = "Ativocl";
+            this.Ativocl.ReadOnly = true;
             // 
             // btnInserir
             // 
@@ -156,6 +162,7 @@
             // 
             // txtId
             // 
+            this.txtId.ForeColor = System.Drawing.SystemColors.Window;
             this.txtId.Location = new System.Drawing.Point(47, 12);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
@@ -200,12 +207,6 @@
             this.btnAlterar.Text = "&Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
-            // 
-            // Ativocl
-            // 
-            this.Ativocl.HeaderText = "Ativo";
-            this.Ativocl.Name = "Ativocl";
-            this.Ativocl.ReadOnly = true;
             // 
             // FUsuario
             // 

@@ -61,10 +61,12 @@
             // 
             // tb_usuario
             // 
+            this.tb_usuario.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.tb_usuario.Location = new System.Drawing.Point(15, 25);
             this.tb_usuario.Name = "tb_usuario";
             this.tb_usuario.Size = new System.Drawing.Size(169, 20);
             this.tb_usuario.TabIndex = 2;
+            this.tb_usuario.TextChanged += new System.EventHandler(this.tb_usuario_TextChanged);
             // 
             // label2
             // 

@@ -8,13 +8,13 @@ namespace ClassLabNu
     public class Produto
     {
         //atributos
-        private int Id { get; set; }
-        private string Descrição { get; set; }
-        private string Unidade { get; set; }
-        private string Codbar { get; set; }
-        private double Valor { get; set; }
-        private double Desconto { get; set; }
-        private bool Descontinuado { get; set; }
+        public int Id { get; set; }
+        public string Descricao { get; set; }
+        public string Unidade { get; set; }
+        public string Codbar { get; set; }
+        public double Valor { get; set; }
+        public double Desconto { get; set; }
+        public bool Descontinuado { get; set; }
         //propriedades
 
         // Construtores 
@@ -29,7 +29,7 @@ namespace ClassLabNu
         public Produto(int id, string descricao, string unidade, string codbar, double valor)
         {
             Id = id;
-            this.Descrição = descricao;
+            this.Descricao = descricao;
             this.Unidade = unidade;
             this.Codbar = codbar;
             this.Valor = valor;
@@ -39,7 +39,7 @@ namespace ClassLabNu
 
         public Produto(string descricao, string unidade, string codbar, double valor, double desconto)
         {
-            this.Descrição = descricao;
+            this.Descricao = descricao;
             this.Unidade = unidade;
             this.Codbar = codbar;
             this.Valor = valor;
@@ -49,12 +49,23 @@ namespace ClassLabNu
         public Produto(int id, string descricao, string unidade, string codbar, double valor, double desconto, bool descontinuado)
         {
             Id = id;
-            this.Descrição = descricao;
+            this.Descricao = descricao;
             this.Unidade = unidade;
             this.Codbar = codbar;
             this.Valor = valor;
             this.Desconto = desconto;
             this.Descontinuado = descontinuado;
+        }
+
+        public Produto(int id, string descricao, string unidade, string codbar, double valor, double desconto)
+        {
+            Id = id;
+            this.Descricao = descricao;
+            this.Unidade = unidade;
+            this.Codbar = codbar;
+            this.Valor = valor;
+            this.Desconto = desconto;
+            
         }
 
 
@@ -71,7 +82,7 @@ namespace ClassLabNu
             cmd.CommandText = "sp_produtos_inserir";
 
             // Parametros
-            cmd.Parameters.AddWithValue("_descricao", Descrição);
+            cmd.Parameters.AddWithValue("_descricao", Descricao);
             cmd.Parameters.AddWithValue("_unidade", Unidade);
             cmd.Parameters.AddWithValue("_codbar", Codbar);
             cmd.Parameters.AddWithValue("_valor", Valor);
@@ -93,7 +104,7 @@ namespace ClassLabNu
             while (dr.Read())
             {
                 produtos.Id = Convert.ToInt32(dr["idprod"]);
-                produtos.Descrição = dr["descricao"].ToString();
+                produtos.Descricao = dr["descricao"].ToString();
                 produtos.Unidade = dr.GetString(2);
                 produtos.Codbar = dr.GetString(3);
                 produtos.Valor = Convert.ToDouble(dr["valor"]);
@@ -146,6 +157,30 @@ namespace ClassLabNu
 
             
         }
+        
+        public static List<Produto> Listar()
+        {
+            List<Produto> produtos = new List<Produto>();
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from produtos order by idprod";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                produtos.Add(new Produto(
+                Convert.ToInt32(dr.GetInt32(0)),
+                dr.GetString(1),
+                dr.GetString(2),
+                dr.GetString(3),
+                dr.GetDouble(4),
+                dr.GetDouble(5)
+                // dr.GetBoolean(6)
+                ));
+            }
+            return produtos;
+        }
+
+
 
         // Descontinuar produto
         public void Desativar(int _id)

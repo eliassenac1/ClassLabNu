@@ -25,14 +25,24 @@ namespace ComercialSys91
 
         private void btn_Inserir_Click(object sender, EventArgs e)
         {
-            Produto produtos = new Produto(
-                tb_descricao.Text,
-                tb_codbar.Text,
-                tb_unidade.Text,
-                Double.Parse(tb_valor.Text),
-                Double.Parse(tb_desconto.Text));
+            try
+            {
+                Produto produtos = new Produto(
+               tb_descricao.Text,
+               tb_codbar.Text,
+               tb_unidade.Text,
+               Double.Parse(tb_valor.Text),
+               Double.Parse(tb_desconto.Text));
 
-            produtos.Inserir();
+                produtos.Inserir();
+                MessageBox.Show("Produto Inserido com Sucesso.");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+           
         }
 
         private void btn_consultar_Click(object sender, EventArgs e)
@@ -42,7 +52,35 @@ namespace ComercialSys91
 
         private void btn_listar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                dgv_produtos.Rows.Clear();
+                List<Produto> listadeprodutos = Produto.Listar();
+                int cont = 0;
+                foreach (Produto produtos in listadeprodutos)
+                {
+                    dgv_produtos.Rows.Add();
+                    dgv_produtos.Rows[cont].Cells[0].Value = produtos.Id.ToString();
+                    dgv_produtos.Rows[cont].Cells[1].Value = produtos.Descricao.ToString();
+                    dgv_produtos.Rows[cont].Cells[2].Value = produtos.Unidade.ToString();
+                    dgv_produtos.Rows[cont].Cells[3].Value = produtos.Codbar.ToString();
+                    dgv_produtos.Rows[cont].Cells[4].Value = produtos.Valor.ToString();
+                    dgv_produtos.Rows[cont].Cells[5].Value = produtos.Desconto.ToString();
+                    // dgv_produtos.Rows[cont].Cells[6].Value = produtos.Descontinuado;
+
+
+
+                    cont++;
+                }
+            }
+            catch (Exception ex )
+            {
+
+                MessageBox.Show(ex.Message);
+            }
            
+                
+            
         }
 
         private void dgv_produtos_CellContentClick(object sender, DataGridViewCellEventArgs e)
